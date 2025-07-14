@@ -13,17 +13,30 @@ The primary result of this work is the close agreement between the experimental 
 ![Simulation vs. Experiment Plot](simulation_vs_experiment.png)
 *Figure 1: The final bifurcation diagram plotting the results of the numerical simulation (black points) against the bifurcation points measured experimentally (red dashed lines).*
 
+## Circuit Diagram and Physical Model
+
+The experiment is based on a driven series R-L-D circuit, as detailed below. The non-linearity of the diode is the key to observing the period-doubling route to chaos. The diagram also critically includes real-world parameters like the function generator's internal resistance and the oscilloscope's input capacitance.
+
+![Circuit Diagram](circuit.png)
+
+The physical and electrical characteristics of the components shown are:
+
+*   **Function Generator:** The driving force for the circuit, providing a sinusoidal AC signal. It has a significant **internal resistance** of `50 Ω`, which must be accounted for in any accurate model as it affects the total voltage delivered to the external circuit.
+*   **Series Components:**
+    *   A discrete **Resistor** of `5 Ω`.
+    *   An **Inductor** of `221 µH`.
+*   **Nonlinear Element (Diode):** A forward-biased diode acts as the essential nonlinear component. Its inherent **junction capacitance** is specified as `15 pF`. This capacitance is what allows it to function within a resonant system at high frequencies.
+*   **Measurement and Parasitic Effects:**
+    *   The primary output variable, the **Voltage of the Diode**, is measured using an oscilloscope.
+    *   Crucially, the oscilloscope is not a perfect measurement device and introduces its own **parasitic input capacitance**, shown here as `18 pF`. This capacitance is in parallel with the diode's own capacitance.
+    *   Therefore, the **total effective capacitance** at this node, which must be used for an accurate simulation, is the sum of the two: `15 pF (diode) + 18 pF (scope) = 33 pF`.
+
 ## Key Features
 
 *   **Detailed Theoretical Model:** Derives the circuit's governing second-order nonlinear differential equation using the Shockley diode equation.
 *   **High-Precision Experimental Data:** Utilizes data from an automated laboratory setup for precise measurement of bifurcation points.
 *   **Parallelized Python Simulation:** Includes a heavily commented Python script that uses `multiprocessing` and `scipy` to numerically solve the system's ODE and generate the bifurcation diagram efficiently.
 *   **Rigorous Uncertainty Analysis:** Calculates the final value of Feigenbaum's constant, $\delta$, with a statistically sound uncertainty.
-
-
-## How to Reproduce the Results
-
-You can reproduce both the PDF report and the simulation plot using the files in this repository.
 
 
 ## Execute the Script**

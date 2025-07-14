@@ -38,7 +38,10 @@ The script will take a few minutes to run. When it's finished, it will print the
 
 ## Abstract
 
-> The universality of the period-doubling route to chaos, characterized by the Feigenbaum constant $\delta$, is a cornerstone of nonlinear dynamics... *(The rest of your excellent abstract goes here)*
+> The universality of the period-doubling route to chaos, characterized by the Feigenbaum constant $\delta$, is a cornerstone of nonlinear dynamics. The universality of the period-doubling route to chaos, characterized by the Feigenbaum constant δ, is a cornerstone of nonlinear dynamics. While the Resistor-Inductor-Diode (R-L-D) circuit is a canonical system for demonstrating this phenomenon, previous experimental realizations have often lacked rigorous theoretical modeling and comprehensive uncertainty analysis. This work presents a high-precision experimental determinationofδusinganautomated, computer-controlledR-L-D circuit. We develop a first-principles theoretical model based on the Shockley equation and the diode’s nonlinear junction capacitance to derive the system’s governing second-order non-
+linear differential equation. The bifurcation points leading to chaos are measured with high resolution, yielding a bifurcation diagram and power spectra that confirm the period-doubling cascade. From the measured bifurcation voltages, we calculate
+Feigenbaum’s first constant to be δ = 4.67 ± 0.08, a value in excellent agreement with the accepted value of 4.669. The analysis demonstrates that deviations in higher-order bifurcations can be qualitatively explained by non-ideal component
+behavior, highlighting the synergy between precision measurement and robust theoretical modeling in the study of complex systems.
 
 ## Citation
 
